@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 31.7245, 10 )
 
 [node name="Base" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )
+
+[node name="Tmp Floor" type="StaticBody2D" parent="."]
+position = Vector2( 72.1251, 531.746 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tmp Floor"]
+shape = SubResource( 1 )
