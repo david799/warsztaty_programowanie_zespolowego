@@ -9,6 +9,11 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("jump") and is_on_wall():
 		velocity.y = JUMP_SPEED
+		
+	if is_on_wall():
+		$AnimatedSprite.play("walk")
+	else:
+		$AnimatedSprite.play("jump")
 	
 	move_and_slide(velocity)
 	
