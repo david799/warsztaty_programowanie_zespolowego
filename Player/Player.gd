@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const GRAVITY = 15
-const JUMP_SPEED = -500
+const JUMP_SPEED = -600
 var velocity = Vector2.ZERO
 
 func _process(delta):
