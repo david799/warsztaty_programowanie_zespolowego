@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const GRAVITY = 25
+const GRAVITY = 22
 const JUMP_SPEED = -600
 var velocity = Vector2.ZERO
 
@@ -17,3 +17,5 @@ func _process(delta):
 	
 	move_and_slide(velocity)
 	
+func end_game():
+	get_tree().quit()
