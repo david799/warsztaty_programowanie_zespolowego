@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Graphics/Train/sprite_traincars1.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/Train/sprite_traincars2.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Train/sprite_traincars4.png" type="Texture" id=3]
+[ext_resource path="res://Train/Train.gd" type="Script" id=4]
+[ext_resource path="res://Graphics/Train/sprite_traincars3.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Train/sprite_traincars0.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "train4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "train5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "train1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "train3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "train2",
+"speed": 5.0
+} ]
+
+[node name="AnimatedSprite" type="AnimatedSprite"]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "train5"
+script = ExtResource( 4 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.217812, -2.36168 )
+scale = Vector2( 8.1879, 4.69196 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
