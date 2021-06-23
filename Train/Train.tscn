@@ -14,11 +14,6 @@ animations = [ {
 "name": "train4",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "train5",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "train1",
@@ -33,6 +28,11 @@ animations = [ {
 "loop": true,
 "name": "train2",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "train5",
+"speed": 5.0
 } ]
 
 [node name="AnimatedSprite" type="AnimatedSprite"]
@@ -44,5 +44,4 @@ script = ExtResource( 4 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 0.217812, -2.36168 )
 scale = Vector2( 8.1879, 4.69196 )
-
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
