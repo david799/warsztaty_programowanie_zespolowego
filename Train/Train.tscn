@@ -38,7 +38,7 @@ animations = [ {
 [node name="AnimatedSprite" type="AnimatedSprite"]
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-animation = "first_train"
+animation = "train1"
 frame = 1
 script = ExtResource( 4 )
 
