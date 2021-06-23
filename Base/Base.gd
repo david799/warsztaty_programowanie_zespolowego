@@ -17,12 +17,12 @@ const instributors_textures = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Global.current_score = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	$Label.text = "Score: " + str(Global.current_score)
 
 
 func _on_TrainTimer_timeout():
@@ -36,3 +36,7 @@ func _on_ObstacleTimer_timeout():
 	randomize()
 	obstacle.get_node("Sprite").set_texture(instributors_textures[randi() % instributors_textures.size()])
 	add_child(obstacle)
+
+
+func _on_ScoreTimer_timeout():
+	Global.current_score += 1

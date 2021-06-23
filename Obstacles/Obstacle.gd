@@ -10,4 +10,4 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Obstacle_body_entered(body):
-	body.end_game()
+	get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")

@@ -11,8 +11,11 @@ extents = Vector2( 31.7245, 10 )
 script = ExtResource( 2 )
 
 [node name="Background" type="ColorRect" parent="."]
+anchor_left = -0.000682545
+anchor_right = -0.000682545
+margin_top = 0.873657
 margin_right = 1280.0
-margin_bottom = 720.0
+margin_bottom = 720.874
 color = Color( 0.976471, 0.941176, 0.882353, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -52,6 +55,27 @@ wait_time = 3.0
 autostart = true
 
 [node name="Obstacle" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1194.1, 349.343 )
+position = Vector2( 1499.13, 349.343 )
+
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+anchor_top = -0.024173
+anchor_bottom = -0.024173
+margin_left = 512.828
+margin_top = 57.9132
+margin_right = 638.828
+margin_bottom = 71.9132
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Score"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="TrainTimer" to="." method="_on_TrainTimer_timeout"]
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_ObstacleTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

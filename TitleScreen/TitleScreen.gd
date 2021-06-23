@@ -8,7 +8,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if Global.current_score > Global.high_score:
+		Global.high_score = Global.current_score
+		
+	$HighScoreText.text = "High score: " + str(Global.high_score)
 
 
 func _process(delta):
